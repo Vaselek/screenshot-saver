@@ -19,7 +19,6 @@ const processNewScreenshot = async (filepath: string): Promise<void> => {
         console.log('Processing new screenshot:', filepath);
         const analysisText = await analyzeImage(filepath);
 
-
         // Parse the response content
         const analysisContent = JSON.parse(analysisText);
 
@@ -43,7 +42,7 @@ export const initializeWatcher = (): void => {
 
     const watcher = chokidar.watch(SCREENSHOT_DIR, {
         persistent: true,
-        ignoreInitial: false,
+        ignoreInitial: true,
         awaitWriteFinish: {
             stabilityThreshold: 2000,
             pollInterval: 100

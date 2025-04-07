@@ -3,3 +3,5 @@ build
 .env
 .idea/
 screenshots.db
+screenshots.db-shm
+screenshots.db-wal
